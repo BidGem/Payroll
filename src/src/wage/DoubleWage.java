@@ -4,6 +4,6 @@ public class DoubleWage implements Wage {
     private SingleWage first, second;
     @Override
     public double get() {
-        return 0;
+        return first.get() + second.get();
     }
 }
