@@ -5,16 +5,19 @@ import wage.Wage;
 public class Employee implements AbstractEmployee{
     private String name;
     private Wage wage;
+    private String email;
 
-    public Employee (String name, Wage wage) {
+    public Employee (String name, String email, Wage wage) {
         this.name = name;
         this. wage = wage;
+        this.email = email;
     }
 
     @Override
     public void sendWage(PaymentMethod paymentMethod){
         double price = getPrice();
         paymentMethod.pay(price);
+
     };
 
     @Override
@@ -25,5 +28,10 @@ public class Employee implements AbstractEmployee{
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String getEmail() {
+        return email;
     }
 }

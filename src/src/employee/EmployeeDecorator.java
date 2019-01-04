@@ -23,4 +23,9 @@ public abstract class EmployeeDecorator implements AbstractEmployee {
     public String getName() {
        return employee.getName();
     }
+
+    @Override
+    public String getEmail() {
+        return employee.getEmail();
+    }
 }

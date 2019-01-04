@@ -7,4 +7,6 @@ public interface AbstractEmployee {
 
     double getPrice();
     String getName();
+    String getEmail();
+
 }
