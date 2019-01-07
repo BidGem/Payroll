@@ -1,6 +1,8 @@
-package decoratorWage;
+package decoratorWage.ConcreteWages;
 
-public class BlankWage implements SingleWage{
+import decoratorWage.Interfaces.SingleWage;
+
+public class BlankWage implements SingleWage {
 
     @Override
     public double get() {

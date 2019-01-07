@@ -1,6 +1,9 @@
-package decoratorWage;
+package decoratorWage.ConcreteWages;
 
-public class HourWage extends DecWage{
+import decoratorWage.AbstractClasses.DecWage;
+import decoratorWage.Interfaces.AbsWage;
+
+public class HourWage extends DecWage {
     private double pricePerHour;
     private int hour;
 

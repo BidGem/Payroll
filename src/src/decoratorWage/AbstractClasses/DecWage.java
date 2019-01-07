@@ -1,6 +1,9 @@
-package decoratorWage;
+package decoratorWage.AbstractClasses;
 
-public abstract class DecWage implements SingleWage{
+import decoratorWage.Interfaces.AbsWage;
+import decoratorWage.Interfaces.SingleWage;
+
+public abstract class DecWage implements SingleWage {
     private AbsWage absWage;
 
     public DecWage(AbsWage absWage){

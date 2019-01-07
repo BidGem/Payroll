@@ -1,4 +1,7 @@
-package decoratorWage;
+package decoratorWage.Reduction;
+
+import decoratorWage.AbstractClasses.DecReduction;
+import decoratorWage.Interfaces.AbsWage;
 
 public class ReductionPensione extends DecReduction {
     private final double CONTRIBUTION = 0.1;

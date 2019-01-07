@@ -1,6 +1,9 @@
-package decoratorWage;
+package decoratorWage.ConcreteWages;
 
-public class CommissionWage extends DecWage{
+import decoratorWage.AbstractClasses.DecWage;
+import decoratorWage.Interfaces.AbsWage;
+
+public class CommissionWage extends DecWage {
     private double amount;
 
     public CommissionWage(AbsWage absWage) {

@@ -1,6 +1,9 @@
-package decoratorWage;
+package decoratorWage.ConcreteWages;
 
-public class FixedWage extends DecWage{
+import decoratorWage.AbstractClasses.DecWage;
+import decoratorWage.Interfaces.AbsWage;
+
+public class FixedWage extends DecWage {
 
     double price;
 

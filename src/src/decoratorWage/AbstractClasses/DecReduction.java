@@ -1,6 +1,8 @@
-package decoratorWage;
+package decoratorWage.AbstractClasses;
 
-public abstract class DecReduction implements AbsWage{
+import decoratorWage.Interfaces.AbsWage;
+
+public abstract class DecReduction implements AbsWage {
 
     private AbsWage currentWage;
 

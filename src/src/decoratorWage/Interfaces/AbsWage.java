@@ -1,4 +1,4 @@
-package decoratorWage;
+package decoratorWage.Interfaces;
 
 public interface AbsWage {
         double get();

@@ -1,8 +1,7 @@
 package employee;
 
-import decoratorWage.AbsWage;
+import decoratorWage.Interfaces.AbsWage;
 import payment.PaymentMethod;
-import wage.Wage;
 
 public interface AbstractEmployee {
     void sendWage(PaymentMethod paymentMethod);

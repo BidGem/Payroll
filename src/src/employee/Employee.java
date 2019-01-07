@@ -1,14 +1,14 @@
 package employee;
 
-import decoratorWage.AbsWage;
+import decoratorWage.Interfaces.AbsWage;
 import payment.PaymentMethod;
 
-public class StandardEmployee implements AbstractEmployee{
+public class Employee implements AbstractEmployee{
     private String name;
     private AbsWage wage;
     private String email;
 
-    public StandardEmployee(String name, String email, AbsWage wage){
+    public Employee(String name, String email, AbsWage wage){
         this.name = name;
         this. wage = wage;
         this.email = email;

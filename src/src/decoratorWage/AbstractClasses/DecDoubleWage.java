@@ -1,11 +1,14 @@
-package wage;
+package decoratorWage.AbstractClasses;
 
-public class DoubleWage implements Wage {
+import decoratorWage.Interfaces.AbsWage;
+import decoratorWage.Interfaces.SingleWage;
+
+public abstract class DecDoubleWage implements AbsWage {
     private SingleWage first, second;
 
-    public DoubleWage(SingleWage firstWage, SingleWage secondWage) {
-        first = firstWage;
-        second = secondWage;
+    public DecDoubleWage(SingleWage first, SingleWage second){
+        this.first = first;
+        this.second = second;
     }
 
     @Override
@@ -24,6 +27,4 @@ public class DoubleWage implements Wage {
         first.updateHours(hours);
         second.updateHours(hours);
     }
-
-
 }
