@@ -36,6 +36,11 @@ public class Employee implements AbstractEmployee{
     }
 
     @Override
+    public void setWage(Wage wage) {
+        this.wage = wage;
+    }
+
+    @Override
     public void addCommission(double commissionReward) {
         wage.addCommission(commissionReward);
     }

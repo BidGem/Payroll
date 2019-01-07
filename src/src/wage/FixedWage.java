@@ -6,7 +6,7 @@ public class FixedWage implements SingleWage {
     public FixedWage (double salary) {
         this.salary = salary;
     }
-    
+
     @Override
     public double get() {
         return salary;

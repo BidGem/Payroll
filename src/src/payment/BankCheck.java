@@ -14,8 +14,9 @@ public class BankCheck implements PaymentMethod {
     @Override
     public void pay(double price) {
         System.out.println("A vista pagate per questo assegno bancario n. " + id);
-        System.out.println("euro" + price);
-        System.out.println("a" +  name);
+        System.out.println("euro " + price);
+        System.out.println("a " +  name);
+        System.out.println();
         id++;
     }
 }

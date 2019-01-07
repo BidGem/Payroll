@@ -10,6 +10,7 @@ public class Paypal implements  PaymentMethod {
     }
     @Override
     public void pay(double price) {
-        System.out.println("Inviato pagamento di " + price + "all'account paypal " + email);
+        System.out.println("Inviato pagamento di " + price + " all'account paypal " + email);
+        System.out.println();
     }
 }

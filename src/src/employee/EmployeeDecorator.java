@@ -1,6 +1,7 @@
 package employee;
 
 import payment.PaymentMethod;
+import wage.Wage;
 
 public abstract class EmployeeDecorator implements AbstractEmployee {
     private AbstractEmployee employee;
@@ -37,5 +38,10 @@ public abstract class EmployeeDecorator implements AbstractEmployee {
     @Override
     public void updateHours(int hours) {
         employee.updateHours(hours);
+    }
+
+    @Override
+    public void setWage(Wage wage) {
+        employee.setWage(wage);
     }
 }
