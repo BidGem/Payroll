@@ -11,6 +11,12 @@ public class PensionFund extends EmployeeDecorator {
 
     @Override
     public double getPrice(){
-        return super.getPrice() * (1 - CONTRIBUTION);
+        double deductedPrice = super.getPrice() * (1 - CONTRIBUTION);
+        return deductedPrice;
+    }
+
+    @Override
+    public void sendWage(PaymentMethod paymentMethod) {
+        super.sendWage(paymentMethod);
     }
 }

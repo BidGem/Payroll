@@ -1,7 +1,6 @@
 package payment;
 
 import employee.AbstractEmployee;
-import employee.Employee;
 
 public class BankCheck implements PaymentMethod {
     private static int id = 0;

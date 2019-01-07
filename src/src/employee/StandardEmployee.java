@@ -1,24 +1,24 @@
 package employee;
-import payment.PaymentMethod;
-import wage.Wage;
 
-public class Employee implements AbstractEmployee{
+import decoratorWage.AbsWage;
+import payment.PaymentMethod;
+
+public class StandardEmployee implements AbstractEmployee{
     private String name;
-    private Wage wage;
+    private AbsWage wage;
     private String email;
 
-    public Employee (String name, String email, Wage wage) {
+    public StandardEmployee(String name, String email, AbsWage wage){
         this.name = name;
         this. wage = wage;
         this.email = email;
     }
 
     @Override
-    public void sendWage(PaymentMethod paymentMethod){
+    public void sendWage(PaymentMethod paymentMethod) {
         double price = getPrice();
         paymentMethod.pay(price);
-
-    };
+    }
 
     @Override
     public double getPrice() {
@@ -36,8 +36,13 @@ public class Employee implements AbstractEmployee{
     }
 
     @Override
-    public void setWage(Wage wage) {
+    public void setWage(AbsWage wage) {
         this.wage = wage;
+    }
+
+    @Override
+    public AbsWage getWage() {
+        return wage;
     }
 
     @Override
@@ -49,6 +54,4 @@ public class Employee implements AbstractEmployee{
     public void updateHours(int hours) {
         wage.updateHours(hours);
     }
-
-
 }

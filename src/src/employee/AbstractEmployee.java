@@ -1,5 +1,6 @@
 package employee;
 
+import decoratorWage.AbsWage;
 import payment.PaymentMethod;
 import wage.Wage;
 
@@ -9,7 +10,8 @@ public interface AbstractEmployee {
     double getPrice();
     String getName();
     String getEmail();
-    void setWage(Wage wage);
+    void setWage(AbsWage wage);
+    AbsWage getWage();
 
     void addCommission(double commissionReward);
     void updateHours(int hours);
