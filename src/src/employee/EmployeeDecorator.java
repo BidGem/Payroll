@@ -28,4 +28,14 @@ public abstract class EmployeeDecorator implements AbstractEmployee {
     public String getEmail() {
         return employee.getEmail();
     }
+
+    @Override
+    public void addCommission(double commissionReward) {
+        employee.addCommission(commissionReward);
+    }
+
+    @Override
+    public void updateHours(int hours) {
+        employee.updateHours(hours);
+    }
 }

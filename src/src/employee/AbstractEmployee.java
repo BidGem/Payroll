@@ -9,4 +9,6 @@ public interface AbstractEmployee {
     String getName();
     String getEmail();
 
+    void addCommission(double commissionReward);
+    void updateHours(int hours);
 }

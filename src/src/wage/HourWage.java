@@ -4,8 +4,6 @@ public class HourWage implements SingleWage {
     private double pricePerHour;
     private int hour;
 
-    //TODO: implementare un metodo per aggoiungere le ore lavorate a fine giornata. Idee: Visitor
-
     public HourWage(double priceForHour) {
         this.pricePerHour = priceForHour;
         hour = 0;
@@ -16,6 +14,20 @@ public class HourWage implements SingleWage {
         double price = hour * pricePerHour;
         hour = 0;
         return price;
+    }
+
+    @Override
+    public void addCommission(double commissionReward) {
 
     }
+
+    @Override
+    public void updateHours(int hours) {
+        addHour(hours);
+    }
+
+    private void addHour(int h){
+        hour += h;
+    }
+
 }

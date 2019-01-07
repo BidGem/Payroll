@@ -6,8 +6,18 @@ public class FixedWage implements SingleWage {
     public FixedWage (double salary) {
         this.salary = salary;
     }
+    
     @Override
     public double get() {
         return salary;
+    }
+
+    @Override
+    public void addCommission(double commissionReward) {
+    }
+
+    @Override
+    public void updateHours(int hours) {
+
     }
 }

@@ -34,4 +34,16 @@ public class Employee implements AbstractEmployee{
     public String getEmail() {
         return email;
     }
+
+    @Override
+    public void addCommission(double commissionReward) {
+        wage.addCommission(commissionReward);
+    }
+
+    @Override
+    public void updateHours(int hours) {
+        wage.updateHours(hours);
+    }
+
+
 }
