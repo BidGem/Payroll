@@ -31,8 +31,7 @@ public class Test {
         luigi.sendWage(bank);
         luigi.sendWage(paypal);
         luigi.sendWage(creditCard);//TODO genera errore, rende tutto nullo
-
-
+        
         AbstractEmployee antonio = new Manager(new EmployeeContacts("antonio@email.com", "Antonio Blu", "7777-5678-0000-3232"),
                 new FixedWage(1000));
         antonio.sendWage(creditCard);
