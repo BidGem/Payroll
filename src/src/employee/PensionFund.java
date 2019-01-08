@@ -1,7 +1,5 @@
 package employee;
 
-import payment.PaymentMethod;
-
 public class PensionFund extends EmployeeDecorator {
     private final double CONTRIBUTION = 0.1;
 

@@ -1,6 +1,5 @@
 package employee;
 
-import payment.PaymentMethod;
 import wage.Wage;
 
 public abstract class EmployeeDecorator extends AbstractEmployee {

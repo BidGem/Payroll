@@ -1,47 +1,18 @@
 package employee;
-import payment.PaymentMethod;
 import wage.Wage;
 
 public class Employee extends AbstractEmployee{
-    private String name;
-    private Wage wage;
-    private String email;
 
-    public Employee (String name, String email, Wage wage) {
-        this.name = name;
-        this. wage = wage;
-        this.email = email;
+    public Employee (EmployeeContacts contacts, Wage wage) {
+        this.currentWage = wage;
+        this.contacts = contacts;
     }
 
     @Override
     public double getPrice() {
-        return wage.get();
+        return currentWage.get();
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String getEmail() {
-        return email;
-    }
-
-    @Override
-    public void setWage(Wage wage) {
-        this.wage = wage;
-    }
-
-    @Override
-    public void addCommission(double commissionReward) {
-        wage.addCommission(commissionReward);
-    }
-
-    @Override
-    public void updateHours(int hours) {
-        wage.updateHours(hours);
-    }
 
 
 }
