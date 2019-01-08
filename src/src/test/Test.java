@@ -14,8 +14,8 @@ public class Test {
 
     public static void main(String[] args) {
         Employee mario = new Employee("Mario Rossi", "mario.rossi@gmail.com", new FixedWage(1700));
-        mario.sendWage(new BankCheck(mario));
-        mario.sendWage(new Paypal(mario));
+        mario.sendWage(new BankCheck());
+        mario.sendWage(new Paypal());
 
         AbstractEmployee luigi = new Employee("Luigi Bianchi", "luigi.bianchi@hotmail.com",
                 new DoubleWage(new CommissionWage(), new HourWage(10)));
@@ -24,7 +24,7 @@ public class Test {
         luigi.updateHours(5);
         luigi.updateHours(2);
         luigi = new PensionFund(luigi);
-        luigi.sendWage(new BankCheck(luigi));
-        luigi.sendWage(new Paypal(luigi));
+        luigi.sendWage(new BankCheck());
+        luigi.sendWage(new Paypal());
     }
 }

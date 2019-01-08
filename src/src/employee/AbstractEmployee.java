@@ -4,9 +4,10 @@ import payment.PaymentMethod;
 import wage.Wage;
 
 public abstract class AbstractEmployee {
+
     public void sendWage(PaymentMethod paymentMethod) {
         double price = getPrice();
-        paymentMethod.pay(price);
+        paymentMethod.pay(price, this);
     }
 
     public abstract double getPrice();
