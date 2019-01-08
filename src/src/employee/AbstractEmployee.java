@@ -3,14 +3,17 @@ package employee;
 import payment.PaymentMethod;
 import wage.Wage;
 
-public interface AbstractEmployee {
-    void sendWage(PaymentMethod paymentMethod);
+public abstract class AbstractEmployee {
+    public void sendWage(PaymentMethod paymentMethod) {
+        double price = getPrice();
+        paymentMethod.pay(price);
+    }
 
-    double getPrice();
-    String getName();
-    String getEmail();
-    void setWage(Wage wage);
+    public abstract double getPrice();
+    public abstract String getName();
+    public abstract String getEmail();
+    public abstract void setWage(Wage wage);
 
-    void addCommission(double commissionReward);
-    void updateHours(int hours);
+    public abstract void addCommission(double commissionReward);
+    public abstract void updateHours(int hours);
 }

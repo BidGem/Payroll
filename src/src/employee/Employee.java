@@ -2,7 +2,7 @@ package employee;
 import payment.PaymentMethod;
 import wage.Wage;
 
-public class Employee implements AbstractEmployee{
+public class Employee extends AbstractEmployee{
     private String name;
     private Wage wage;
     private String email;
@@ -12,13 +12,6 @@ public class Employee implements AbstractEmployee{
         this. wage = wage;
         this.email = email;
     }
-
-    @Override
-    public void sendWage(PaymentMethod paymentMethod){
-        double price = getPrice();
-        paymentMethod.pay(price);
-
-    };
 
     @Override
     public double getPrice() {

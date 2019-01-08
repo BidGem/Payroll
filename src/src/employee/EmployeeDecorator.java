@@ -3,16 +3,11 @@ package employee;
 import payment.PaymentMethod;
 import wage.Wage;
 
-public abstract class EmployeeDecorator implements AbstractEmployee {
+public abstract class EmployeeDecorator extends AbstractEmployee {
     private AbstractEmployee employee;
 
     public EmployeeDecorator(AbstractEmployee employee) {
         this.employee = employee;
-    }
-
-    @Override
-    public void sendWage(PaymentMethod paymentMethod) {
-        employee.sendWage(paymentMethod);
     }
 
     @Override
