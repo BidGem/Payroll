@@ -4,10 +4,10 @@ public class EmployeeContacts {
 
     private String email;
     private String name;
-    private String card_number;
+    private String cardNumber;
 
-    public EmployeeContacts(String email, String name, String card_number){
-        this.card_number = card_number;
+    public EmployeeContacts(String email, String name, String cardNumber){
+        this.cardNumber = cardNumber;
         this.email = email;
         this.name = name;
     }
@@ -16,8 +16,8 @@ public class EmployeeContacts {
         return name;
     }
 
-    public String getCard_number() {
-        return card_number;
+    public String getCardNumber() {
+        return cardNumber;
     }
 
     public String getEmail() {

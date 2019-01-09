@@ -5,38 +5,19 @@ import wage.Wage;
 
 public abstract class AbstractEmployee {
 
-    EmployeeContacts contacts;
-    Wage currentWage;
-
-    public void sendWage(PaymentMethod paymentMethod) {
+    public void sendWage() {
         double price = getPrice();
-        paymentMethod.pay(price, this);
+        getPaymentMethod().pay(price, this);
     }
-
 
     public abstract double getPrice();
+    public abstract String getName();
+    public abstract String getEmail();
+    public abstract String getCardNumber();
+    public abstract void setWage(Wage wage);
+    public abstract void setPaymentMethod(PaymentMethod method);
+    public abstract PaymentMethod getPaymentMethod();
 
-    public String getName() {
-        return contacts.getName();
-    }
-
-    public String getEmail() {
-        return contacts.getEmail();
-    }
-
-    public String getCardNumber(){
-        return contacts.getCard_number();
-    }
-
-    public void setWage(Wage wage) {
-        currentWage = wage;
-    }
-
-    public void addCommission(double commissionReward) {
-        currentWage.addCommission(commissionReward);
-    }
-
-    public void updateHours(int hours) {
-        currentWage.updateHours(hours);
-    }
+    public abstract void addCommission(double commissionReward);
+    public abstract void updateHours(int hours);
 }

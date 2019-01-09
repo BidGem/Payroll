@@ -1,5 +1,6 @@
 package employee;
 
+import payment.PaymentMethod;
 import wage.Wage;
 
 public abstract class EmployeeDecorator extends AbstractEmployee {
@@ -37,5 +38,20 @@ public abstract class EmployeeDecorator extends AbstractEmployee {
     @Override
     public void setWage(Wage wage) {
         employee.setWage(wage);
+    }
+
+    @Override
+    public String getCardNumber() {
+        return employee.getCardNumber();
+    }
+
+    @Override
+    public PaymentMethod getPaymentMethod() {
+        return employee.getPaymentMethod();
+    }
+
+    @Override
+    public void setPaymentMethod(PaymentMethod method) {
+        employee.setPaymentMethod(method);
     }
 }

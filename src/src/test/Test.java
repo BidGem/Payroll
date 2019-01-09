@@ -4,6 +4,8 @@ import employee.*;
 import payment.BankCheck;
 import payment.CreditCard;
 import payment.Paypal;
+import paymentscheduler.Scheduler;
+import paymentscheduler.Time;
 import wage.CommissionWage;
 import wage.DoubleWage;
 import wage.FixedWage;
@@ -12,32 +14,27 @@ import wage.HourWage;
 public class Test {
 
     public static void main(String[] args) {
-        BankCheck bank = new BankCheck();
-        CreditCard creditCard = new CreditCard();
-        Paypal paypal = new Paypal();
-        Employee mario = new Employee(new EmployeeContacts("mario@email.com", "Mario Rossi", "1234-5678-9012-3232"),
-                new FixedWage(1700));
-        mario.sendWage(bank);
-        mario.sendWage(paypal);
+        Time t = new Time();
 
-        AbstractEmployee luigi = new Employee(new EmployeeContacts("luigi@email.com", "Luigi Verdi", "0000-5678-1111-3232"),
-                new DoubleWage(new CommissionWage(), new HourWage(10)));
-        luigi.addCommission(150);
-        luigi.updateHours(8);
-        luigi.updateHours(5);
-        luigi.updateHours(2);
+        AbstractEmployee mario = new Employee(
+                new EmployeeContacts("mario.rossi@hotmail.com", "Mario Rossi", "0000-1111-2222-3333"),
+                new DoubleWage(new FixedWage(1000), new CommissionWage()),
+                new BankCheck());
+        mario.addCommission(400);
+
+        AbstractEmployee luigi = new Employee(
+                new EmployeeContacts("luigi.rossi@hotmail.com", "Luigi Bianchi", "0000-1111-2222-3333"),
+                new DoubleWage(new FixedWage(800), new CommissionWage()),
+                new Paypal());
         luigi = new PensionFund(luigi);
 
-        luigi.sendWage(bank);
-        luigi.sendWage(paypal);
-        luigi.sendWage(creditCard);//TODO genera errore, rende tutto nullo
-        
-        AbstractEmployee antonio = new Manager(new EmployeeContacts("antonio@email.com", "Antonio Blu", "7777-5678-0000-3232"),
-                new FixedWage(1000));
-        antonio.sendWage(creditCard);
-        antonio = new PensionFund(antonio);
-        antonio.sendWage(bank);
-        antonio.sendWage(paypal);
-        antonio.sendWage(creditCard);//TODO genera errore, rende tutto nullo
+        Scheduler weekly = new Scheduler(7);
+        Scheduler monthly = new Scheduler( 30);
+        weekly.add(mario);
+        monthly.add(luigi);
+
+        t.add(monthly);
+        t.add(weekly);
+        t.start();
     }
 }
