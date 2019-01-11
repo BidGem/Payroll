@@ -1,11 +1,12 @@
 package employee;
 
 import payment.PaymentMethod;
+import paymentscheduler.Observer;
 import wage.Wage;
 
-public abstract class AbstractEmployee {
+public abstract class AbstractEmployee implements Observer {
 
-    public void sendWage() {
+    public void update() {
         double price = getPrice();
         getPaymentMethod().pay(price, this);
     }

@@ -3,8 +3,19 @@ package paymentscheduler;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Time extends Thread implements Observable<Scheduler>{
-    List<Scheduler> observers = new ArrayList<>();
+import static java.lang.Thread.sleep;
+
+public class Time extends Observable<Scheduler> implements Runnable{
+    private static Time instance;
+
+    public static Time getInstance(){
+        if (instance == null) {
+            instance = new Time();
+        }
+        return instance;
+    }
+
+    private Time() {}
 
     @Override
     public void run() {
@@ -17,20 +28,5 @@ public class Time extends Thread implements Observable<Scheduler>{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public void add(Scheduler x) {
-        observers.add(x);
-    }
-
-    @Override
-    public void remove(Scheduler x) {
-        observers.remove(x);
-    }
-
-    @Override
-    public void notifyObs() {
-        observers.stream().forEach(x -> x.update());
     }
 }
